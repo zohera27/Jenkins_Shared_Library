@@ -4,7 +4,7 @@ def build(String ImageName, String ImageTag, String Dockeraccount){
 
         docker image build -t ${Dockeraccount}/${ImageName} .
         docker image tag ${Dockeraccount}/${ImageName} ${Dockeraccount}/${ImageName}:${ImageTag}
-        docker image tag ${Dockeraccount}/${ImageName} ${Dockeraccount}/${ImageName}:latest
+        
     
     """
 
@@ -31,7 +31,7 @@ def PushImage(String ImageName, String ImageTag, String Dockeraccount){
     }
 
     sh "docker image push ${Dockeraccount}/${ImageName}:${ImageTag}"
-    sh "docker image push ${Dockeraccount}/${ImageName}:latest"
+    
     
 }
 
