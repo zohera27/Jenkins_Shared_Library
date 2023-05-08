@@ -3,7 +3,7 @@ def build(String ImageName, String ImageTag, String Dockeraccount){
     sh """
 
         docker image build -t ${Dockeraccount}/${ImageName} .
-        docker image tag ${Dockeraccount}/${ImageName} ${Dockeraccount}/${ImageName}:${ImageTag}
+        docker image tag ${Dockeraccount}/${ImageName}:${ImageTag}
         
     
     """
